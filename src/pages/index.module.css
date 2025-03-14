@@ -1,0 +1,50 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+ .heroBanner {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(150deg, var(--ifm-color-primary-dark) 0%, var(--ifm-color-primary) 50%, var(--ifm-color-primary-light) 100%);
+  z-index: 1; /* Ensure content is above the floating logos */
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.section {
+  padding: 3rem 0;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.ctaBox {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: var(--ifm-color-primary-lightest);
+  border-radius: 8px;
+}
+
+[data-theme='dark'] .ctaBox {
+  background-color: rgba(75, 85, 99, 0.3);
+}
+
+.button.button--secondary.button--lg {
+  color: white;
+}

@@ -1,0 +1,64 @@
+.floatingLogoContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none; /* Ensures the logos don't interfere with clicks */
+    z-index: 0;
+  }
+  
+  .floatingLogo {
+    position: absolute;
+    width: 150px;
+    height: auto;
+    animation: diagonalTraverse 20s linear infinite, rotate 30s linear infinite;
+  }
+  
+  /* Diagonal traversal animation */
+  @keyframes diagonalTraverse {
+    0% {
+      left: -150px; /* Start off-screen to the left */
+      transform: translateY(0);
+    }
+    100% {
+      left: calc(100% + 150px); /* End off-screen to the right */
+      transform: translateY(-100px); /* Move upward for diagonal effect */
+    }
+  }
+  
+  /* Rotation animation */
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Combine both animations */
+  .floatingLogo {
+    animation: 
+      diagonalTraverse 25s linear infinite,
+      rotate 30s linear infinite;
+  }
+  
+  /* For smaller screens, adjust the animation */
+  @media (max-width: 768px) {
+    .floatingLogo {
+      width: 100px;
+    }
+    
+    @keyframes diagonalTraverse {
+      0% {
+        left: -100px;
+        transform: translateY(0);
+      }
+      100% {
+        left: calc(100% + 100px);
+        transform: translateY(-80px);
+      }
+    }
+  }

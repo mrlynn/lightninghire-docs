@@ -1,0 +1,200 @@
+/* Feature Card */
+.featureCard {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+    height: 100%;
+    background-color: var(--ifm-card-background-color);
+    border: 1px solid var(--ifm-color-emphasis-200);
+  }
+  
+  .featureCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  .featureCard h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  /* Card Grid */
+  .cardGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+  }
+  
+  /* Info Box */
+  .infoBox {
+    padding: 1rem;
+    margin: 1.5rem 0;
+    border-radius: 4px;
+    border-left: 4px solid;
+  }
+  
+  .infoBoxTitle {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .infoBox_info {
+    background-color: rgba(33, 150, 243, 0.1);
+    border-left-color: var(--ifm-color-primary);
+  }
+  
+  .infoBox_success {
+    background-color: rgba(76, 175, 80, 0.1);
+    border-left-color: var(--ifm-color-success);
+  }
+  
+  .infoBox_warning {
+    background-color: rgba(255, 152, 0, 0.1);
+    border-left-color: var(--ifm-color-warning);
+  }
+  
+  .infoBox_danger {
+    background-color: rgba(244, 67, 54, 0.1);
+    border-left-color: var(--ifm-color-danger);
+  }
+  
+  /* API Endpoint */
+  .apiEndpoint {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    background-color: var(--ifm-code-background);
+    border: 1px solid var(--ifm-color-emphasis-200);
+    overflow: auto;
+  }
+  
+  .apiMethod {
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    min-width: 60px;
+    text-align: center;
+    margin-right: 1rem;
+  }
+  
+  .apiMethod_get {
+    background-color: #61affe;
+    color: white;
+  }
+  
+  .apiMethod_post {
+    background-color: #49cc90;
+    color: white;
+  }
+  
+  .apiMethod_put {
+    background-color: #fca130;
+    color: white;
+  }
+  
+  .apiMethod_delete {
+    background-color: #f93e3e;
+    color: white;
+  }
+  
+  .apiPath {
+    font-family: var(--ifm-font-family-monospace);
+    font-size: 0.9rem;
+    margin-right: 1rem;
+    white-space: nowrap;
+  }
+  
+  .apiDescription {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .apiAuth {
+    background-color: #e6e6e6;
+    border-radius: 4px;
+    padding: 0.15rem 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+    color: var(--ifm-color-gray-800);
+  }
+  
+  /* Steps */
+  .steps {
+    margin: 2rem 0;
+    counter-reset: step;
+  }
+  
+  .step {
+    position: relative;
+    border-left: 2px solid var(--ifm-color-emphasis-300);
+    padding-left: 2rem;
+    padding-bottom: 1.5rem;
+    margin-left: 1rem;
+  }
+  
+  .step:last-child {
+    border-left: 2px solid transparent;
+  }
+  
+  .step::before {
+    counter-increment: step;
+    content: counter(step);
+    position: absolute;
+    left: -1rem;
+    top: 0;
+    background-color: var(--ifm-color-primary);
+    color: white;
+    font-weight: 600;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .stepTitle {
+    margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  
+  /* Screenshot */
+  .screenshot {
+    margin: 2rem 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .screenshotImage {
+    display: block;
+    width: 100%;
+  }
+  
+  .screenshotCaption {
+    background-color: var(--ifm-color-emphasis-100);
+    padding: 0.75rem;
+    text-align: center;
+    font-style: italic;
+    color: var(--ifm-color-emphasis-700);
+  }
+  
+  /* Dark mode adjustments */
+  [data-theme='dark'] .featureCard {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  [data-theme='dark'] .apiAuth {
+    background-color: #333;
+    color: var(--ifm-color-gray-300);
+  }
