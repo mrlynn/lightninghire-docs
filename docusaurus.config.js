@@ -46,8 +46,10 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'lightning-hire', // Usually your GitHub org/user name.
+  organizationName: 'mrlynn', // Usually your GitHub org/user name.
   projectName: 'lightning-hire-docs', // Usually your repo name.
+  trailingSlash: false,
+  deploymentBranch: 'gh-pages',
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
