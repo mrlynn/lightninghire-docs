@@ -76,7 +76,9 @@ const config = {
         },
         blog: false, // Disable blog
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: [
+            require.resolve('./src/css/custom.css'),
+          ],
         },
       }),
     ],
@@ -100,6 +102,10 @@ const config = {
             sidebarId: 'tutorialSidebar',
             position: 'left',
             label: 'Documentation',
+          },
+          {
+            type: 'custom-auth-nav',
+            position: 'right',
           },
           {
             href: 'https://lightninghire.com',

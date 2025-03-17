@@ -1,0 +1,3 @@
+name,email,phone,skills,experience,education,certifications
+John Smith,john.smith@example.com,(555) 123-4567,"JavaScript, React, Node.js, TypeScript","Senior Developer at TechCorp (2018-Present), Frontend Developer at WebSolutions (2015-2018)","Bachelor of Science, Computer Science - State University (2015)","AWS Certified Developer, React Certification"
+Emily Johnson,emily.johnson@example.com,(555) 987-6543,"Product Management, Agile, User Research, Wireframing","Product Manager at SaaS Inc (2016-Present), Associate PM at Tech Solutions (2014-2016)","MBA, Business Administration - Business School (2014)","Certified Scrum Product Owner, Agile Certified Practitioner" 

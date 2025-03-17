@@ -11,7 +11,7 @@ const FeatureList = [
         Create, track, and search candidate profiles with powerful filtering and organization tools.
       </>
     ),
-    link: '/docs/features/candidates/index',
+    link: '/docs/features/candidates',
   },
   {
     title: 'Job Management',
@@ -20,7 +20,7 @@ const FeatureList = [
         Maintain a comprehensive database of job listings with detailed requirements and qualifications.
       </>
     ),
-    link: '/docs/features/jobs/index',
+    link: '/docs/features/jobs',
   },
   {
     title: 'Evaluations',
@@ -29,7 +29,7 @@ const FeatureList = [
         Automatically evaluate candidate fit for specific jobs using AI-powered matching algorithms.
       </>
     ),
-    link: '/docs/features/evaluations/index',
+    link: '/docs/features/evaluations',
   },
   {
     title: 'Bulk Operations',
@@ -38,7 +38,7 @@ const FeatureList = [
         Save time by importing and managing multiple jobs or candidates simultaneously.
       </>
     ),
-    link: '/docs/bulk-operations/index',
+    link: '/docs/bulk-operations',
   },
 ];
 

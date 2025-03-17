@@ -40,6 +40,15 @@ const sidebars = {
     },
     {
       type: 'category',
+      label: 'Bulk Operations',
+      items: [
+        'bulk-operations/index',
+        'bulk-operations/importing',
+        'bulk-operations/templates',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Advanced',
       items: [
         'advanced/api',
