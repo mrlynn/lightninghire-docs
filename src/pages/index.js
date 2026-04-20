@@ -94,7 +94,7 @@ function AudienceSection() {
 
 function ReferenceSection() {
   return (
-    <section className={styles.section} style={{background: '#F4F6FA'}}>
+    <section className={clsx(styles.section, styles.referenceSection)}>
       <div className="container">
         <span className={styles.sectionEyebrow}>Reference</span>
         <h2 className={styles.sectionTitle}>Looking for something specific?</h2>

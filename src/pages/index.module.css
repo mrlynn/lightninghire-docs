@@ -77,6 +77,50 @@
   padding: 4rem 0;
 }
 
+/* Reference section — soft surface that inverts in dark mode so yellow title
+   and near-white body text stay readable on the appropriate background. */
+.referenceSection {
+  background: #F4F6FA;
+}
+
+[data-theme='dark'] .referenceSection {
+  background: #0F1B4C;
+}
+
+/* Hero secondary button ("I'm a recruiter") — navy bg on navy hero is
+   invisible. Use a yellow-outline ghost variant so it contrasts with the
+   navy hero in both themes. */
+.heroButtons :global(.button--secondary) {
+  background: transparent;
+  border: 1.5px solid rgba(255, 214, 10, 0.55);
+  color: #FFD60A;
+}
+
+.heroButtons :global(.button--secondary:hover),
+.heroButtons :global(.button--secondary:focus) {
+  background: rgba(255, 214, 10, 0.12);
+  border-color: #FFD60A;
+  color: #FFD60A;
+  text-decoration: none;
+}
+
+/* Reference-section buttons in dark mode — same logic: navy button on navy
+   surface is invisible, so flip to yellow outline. Light mode keeps the
+   default navy-on-light-gray, which already has good contrast. */
+[data-theme='dark'] .referenceSection :global(.button--secondary) {
+  background: transparent;
+  border: 1.5px solid rgba(255, 214, 10, 0.55);
+  color: #FFD60A;
+}
+
+[data-theme='dark'] .referenceSection :global(.button--secondary:hover),
+[data-theme='dark'] .referenceSection :global(.button--secondary:focus) {
+  background: rgba(255, 214, 10, 0.12);
+  border-color: #FFD60A;
+  color: #FFD60A;
+  text-decoration: none;
+}
+
 .sectionEyebrow {
   font-size: 11px;
   font-weight: 700;
