@@ -104,6 +104,8 @@ export function Screenshot({ src, alt, caption }) {
 }
 
 /**
- * Tabs component for showing tabbed content (uses Docusaurus Tabs under the hood)
+ * Tabs component for showing tabbed content (uses Docusaurus Tabs under the hood).
+ * In Docusaurus 3, Tabs and TabItem are default exports from separate modules.
  */
-export { Tabs, TabItem } from '@theme/Tabs';
+export { default as Tabs } from '@theme/Tabs';
+export { default as TabItem } from '@theme/TabItem';

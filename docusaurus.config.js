@@ -1,18 +1,14 @@
 // @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
+// LightningHire docs — Docusaurus 3 config.
 
 const {themes} = require('prism-react-renderer');
 const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
 
-// Import Inter font to match app
 const HEAD_TAGS = [
   {
     tagName: 'link',
-    attributes: {
-      rel: 'preconnect',
-      href: 'https://fonts.googleapis.com',
-    },
+    attributes: {rel: 'preconnect', href: 'https://fonts.googleapis.com'},
   },
   {
     tagName: 'link',
@@ -26,37 +22,29 @@ const HEAD_TAGS = [
     tagName: 'link',
     attributes: {
       rel: 'stylesheet',
-      href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap',
+      href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap',
     },
   },
 ];
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'LightningHire Documentation',
-  tagline: 'AI-Powered Resume Evaluation System',
-  favicon: 'img/favicon.ico',
+  title: 'LightningHire Docs',
+  tagline: 'Stop guessing. Start winning interviews.',
+  favicon: 'img/favicon.svg',
   headTags: HEAD_TAGS,
 
-  // Set the production url of your site here
   url: 'https://docs.lightninghire.com',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'mrlynn', // Usually your GitHub org/user name.
-  projectName: 'lightning-hire-docs', // Usually your repo name.
+  organizationName: 'mrlynn',
+  projectName: 'lightning-hire-docs',
   trailingSlash: false,
   deploymentBranch: 'gh-pages',
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -69,17 +57,31 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          // editUrl:
-          //   'https://github.com/lightning-hire/lightning-hire-docs/tree/main/',
+          // editUrl: 'https://github.com/mrlynn/lightning-hire-docs/tree/main/',
         },
-        blog: false, // Disable blog
+        blog: false,
         theme: {
-          customCss: [
-            require.resolve('./src/css/custom.css'),
-          ],
+          customCss: [require.resolve('./src/css/custom.css')],
         },
+      }),
+    ],
+  ],
+
+  themes: [
+    // Local full-text search. No external service required; index is built
+    // at `npm run build` and shipped as a static JSON alongside the site.
+    [
+      require.resolve('@easyops-cn/docusaurus-search-local'),
+      /** @type {import('@easyops-cn/docusaurus-search-local').PluginOptions} */
+      ({
+        hashed: true,
+        indexDocs: true,
+        indexBlog: false,
+        indexPages: true,
+        docsRouteBasePath: '/docs',
+        highlightSearchTermsOnTargetPage: true,
+        searchResultLimits: 8,
+        searchResultContextMaxLength: 50,
       }),
     ],
   ],
@@ -87,21 +89,35 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
       image: 'img/lightning-hire-social-card.jpg',
+      colorMode: {
+        defaultMode: 'light',
+        respectPrefersColorScheme: true,
+      },
       navbar: {
         title: 'LightningHire',
         logo: {
-          alt: 'LightningHire Logo',
-          src: 'img/logo-circle-on-black.png',
+          alt: 'LightningHire',
+          src: 'img/logo.svg',
         },
-        style: 'primary',
         items: [
           {
             type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            sidebarId: 'seekerSidebar',
             position: 'left',
-            label: 'Documentation',
+            label: 'For job seekers',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'recruiterSidebar',
+            position: 'left',
+            label: 'For recruiters',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'referenceSidebar',
+            position: 'left',
+            label: 'Reference',
           },
           {
             type: 'custom-auth-nav',
@@ -109,74 +125,62 @@ const config = {
           },
           {
             href: 'https://lightninghire.com',
-            label: 'Back to App',
+            label: 'Open app',
             position: 'right',
+            className: 'button button--primary button--sm',
           },
         ],
       },
       footer: {
         style: 'dark',
         logo: {
-          alt: 'LightningHire Logo',
-          src: 'img/logo-circle-on-black.png',
+          alt: 'LightningHire',
+          src: 'img/logo-wordmark.svg',
           href: 'https://lightninghire.com',
-          width: 160,
+          width: 200,
         },
         links: [
           {
-            title: 'Docs',
+            title: 'Job seekers',
             items: [
-              {
-                label: 'Getting Started',
-                to: '/docs/getting-started/introduction',
-              },
-              {
-                label: 'Features',
-                to: '/docs/features/candidates',
-              },
-              {
-                label: 'Advanced',
-                to: '/docs/advanced/api',
-              },
+              {label: 'Getting started', to: '/docs/seeker/getting-started'},
+              {label: 'Mock interviews', to: '/docs/seeker/mock-interviews'},
+              {label: 'STAR stories', to: '/docs/seeker/star-stories'},
+              {label: 'Salary negotiation', to: '/docs/seeker/salary-negotiation'},
             ],
           },
           {
-            title: 'Support',
+            title: 'Recruiters',
             items: [
-              {
-                label: 'Contact Support',
-                href: 'mailto:support@lightninghire.com',
-              },
-              {
-                label: 'Book a Demo',
-                href: 'https://lightninghire.com/demo',
-              },
+              {label: 'Getting started', to: '/docs/recruiter/getting-started'},
+              {label: 'Requisitions', to: '/docs/recruiter/requisitions'},
+              {label: 'Scorecards', to: '/docs/recruiter/scorecards'},
+              {label: 'Pipeline', to: '/docs/recruiter/pipeline'},
             ],
           },
           {
-            title: 'More',
+            title: 'Reference',
             items: [
-              {
-                label: 'GitHub',
-                href: 'https://github.com/lightning-hire',
-              },
-              {
-                label: 'Pricing',
-                href: 'https://lightninghire.com/pricing',
-              },
+              {label: 'API', to: '/docs/reference/api'},
+              {label: 'Plans & entitlements', to: '/docs/reference/entitlements'},
+              {label: 'Privacy', to: '/docs/reference/privacy'},
+              {label: 'Changelog', to: '/docs/reference/changelog'},
+            ],
+          },
+          {
+            title: 'Company',
+            items: [
+              {label: 'lightninghire.com', href: 'https://lightninghire.com'},
+              {label: 'Pricing', href: 'https://lightninghire.com/pricing'},
+              {label: 'Support', href: 'mailto:support@lightninghire.com'},
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} LightningHire. All rights reserved.`,
+        copyright: `© ${new Date().getFullYear()} LightningHire. Mock interviews, application tracking, and offer prep — built for people who want signal, not noise.`,
       },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-      },
-      // Match the font family from your app
-      fonts: {
-        fontFamily: `'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif`,
-        headingFont: `'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif`,
       },
     }),
 };

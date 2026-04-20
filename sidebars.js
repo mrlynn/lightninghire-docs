@@ -1,62 +1,87 @@
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
-  tutorialSidebar: [
+  seekerSidebar: [
     {
       type: 'category',
-      label: 'Getting Started',
+      label: 'Start here',
+      collapsed: false,
+      items: ['seeker/getting-started', 'seeker/free-vs-pro'],
+    },
+    {
+      type: 'category',
+      label: 'Interview prep',
+      collapsed: false,
       items: [
-        'getting-started/introduction',
-        // Remove these until the files exist
-        // 'getting-started/installation',
-        // 'getting-started/configuration',
+        'seeker/mock-interviews',
+        'seeker/star-stories',
+        'seeker/live-sessions',
+        'seeker/recording-interviews',
+        'seeker/question-bank',
       ],
     },
     {
       type: 'category',
-      label: 'Features',
+      label: 'Job search',
+      collapsed: false,
       items: [
-        {
-          type: 'category',
-          label: 'Candidates',
-          items: [
-            'features/candidates/index',
-            // Remove these until the files exist
-            // 'features/candidates/adding',
-            // 'features/candidates/managing',
-            // 'features/candidates/searching',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Evaluations',
-          items: [
-            'features/evaluations/index',
-            // Remove these until the files exist
-            // 'features/evaluations/creating',
-            // 'features/evaluations/results',
-          ],
-        },
+        'seeker/pipeline',
+        'seeker/resume',
+        'seeker/company-intel',
+        'seeker/extension',
       ],
     },
     {
       type: 'category',
-      label: 'Bulk Operations',
+      label: 'Offer & negotiation',
+      collapsed: false,
+      items: ['seeker/salary-negotiation', 'seeker/analytics'],
+    },
+    {
+      type: 'category',
+      label: 'Resources',
+      collapsed: false,
+      items: ['seeker/courses', 'seeker/networking'],
+    },
+  ],
+
+  recruiterSidebar: [
+    {
+      type: 'category',
+      label: 'Start here',
+      collapsed: false,
+      items: ['recruiter/getting-started', 'recruiter/how-its-different'],
+    },
+    {
+      type: 'category',
+      label: 'Hiring loop',
+      collapsed: false,
       items: [
-        'bulk-operations/index',
-        'bulk-operations/importing',
-        'bulk-operations/templates',
+        'recruiter/requisitions',
+        'recruiter/candidates',
+        'recruiter/pipeline',
+        'recruiter/scorecards',
+        'recruiter/fit-scores',
       ],
     },
     {
       type: 'category',
-      label: 'Advanced',
+      label: 'Operations',
+      collapsed: false,
       items: [
-        'advanced/api',
-        'advanced/custom-components',
-        // Remove these until the files exist
-        // 'advanced/custom-matching',
+        'recruiter/extension',
+        'recruiter/bulk-import',
+        'recruiter/question-rubrics',
+        'recruiter/collaboration',
       ],
     },
+  ],
+
+  referenceSidebar: [
+    'reference/api',
+    'reference/entitlements',
+    'reference/custom-components',
+    'reference/privacy',
+    'reference/changelog',
   ],
 };
 

@@ -1,50 +1,213 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
+/* Homepage styles — navy hero, yellow accents, audience split cards. */
 
- .heroBanner {
-  padding: 4rem 0;
-  text-align: center;
+.heroBanner {
+  padding: 6rem 0 5rem;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(150deg, var(--ifm-color-primary-dark) 0%, var(--ifm-color-primary) 50%, var(--ifm-color-primary-light) 100%);
-  z-index: 1; /* Ensure content is above the floating logos */
+  background: #0F1B4C;
+  color: #FFFFFF;
+  border-bottom: 3px solid #FFD60A;
+}
+
+.heroBanner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 85% 15%, rgba(255, 214, 10, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 10% 90%, rgba(255, 214, 10, 0.06) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+.heroInner {
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #9BB0E0;
+  margin-bottom: 18px;
+}
+
+.heroTitle {
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin: 0 0 18px;
+  color: #FFFFFF;
+}
+
+.heroTitleAccent {
+  color: #FFD60A;
+}
+
+.heroSubtitle {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  max-width: 640px;
+  margin: 0 0 32px;
+  color: #BFC7D9;
+}
+
+.heroButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.trustLine {
+  margin-top: 28px;
+  font-size: 13px;
+  color: #9BB0E0;
 }
 
 @media screen and (max-width: 996px) {
   .heroBanner {
-    padding: 2rem;
+    padding: 3rem 0 2.5rem;
   }
 }
 
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 2rem;
+.section {
+  padding: 4rem 0;
 }
 
-.section {
-  padding: 3rem 0;
+.sectionEyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #0F1B4C;
+  margin-bottom: 12px;
 }
 
 .sectionTitle {
   font-size: 2rem;
-  margin-bottom: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #0F1B4C;
+  margin: 0 0 12px;
 }
 
-.ctaBox {
-  margin-top: 2rem;
-  padding: 1.5rem;
-  background-color: var(--ifm-color-primary-lightest);
-  border-radius: 8px;
+.sectionLead {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #2A3A5C;
+  max-width: 680px;
+  margin: 0 0 32px;
 }
 
-[data-theme='dark'] .ctaBox {
-  background-color: rgba(75, 85, 99, 0.3);
+.audienceGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 8px;
 }
 
-.button.button--secondary.button--lg {
-  color: white;
+@media screen and (max-width: 768px) {
+  .audienceGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.audienceCard {
+  background: #FFFFFF;
+  border: 1px solid #C5CDE0;
+  border-radius: 12px;
+  padding: 28px 28px 24px;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.audienceCard:hover {
+  border-color: #0F1B4C;
+  box-shadow: 0 8px 24px rgba(15, 27, 76, 0.08);
+  transform: translateY(-3px);
+}
+
+.audienceCardEyebrow {
+  display: inline-block;
+  padding: 4px 10px;
+  background: #FFD60A;
+  color: #0F1B4C;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  align-self: flex-start;
+}
+
+.audienceCardTitle {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #0F1B4C;
+  letter-spacing: -0.02em;
+  margin: 0 0 10px;
+}
+
+.audienceCardLead {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #2A3A5C;
+  margin: 0 0 18px;
+}
+
+.audienceCardList {
+  margin: 0 0 22px;
+  padding: 0;
+  list-style: none;
+}
+
+.audienceCardList li {
+  font-size: 14px;
+  color: #2A3A5C;
+  padding: 6px 0 6px 22px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.audienceCardList li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #0F1B4C;
+  font-weight: 700;
+}
+
+.audienceCardCta {
+  margin-top: auto;
+}
+
+/* Dark mode hero keeps navy — brand is navy, dark mode just shifts surfaces */
+[data-theme='dark'] .sectionTitle,
+[data-theme='dark'] .sectionEyebrow,
+[data-theme='dark'] .audienceCardTitle {
+  color: #FFD60A;
+}
+
+[data-theme='dark'] .sectionLead,
+[data-theme='dark'] .audienceCardLead,
+[data-theme='dark'] .audienceCardList li {
+  color: #E5E9F2;
+}
+
+[data-theme='dark'] .audienceCard {
+  background: #0F1B4C;
+  border-color: #3A4E85;
+}
+
+[data-theme='dark'] .audienceCard:hover {
+  border-color: #FFD60A;
+}
+
+[data-theme='dark'] .audienceCardList li::before {
+  color: #FFD60A;
 }

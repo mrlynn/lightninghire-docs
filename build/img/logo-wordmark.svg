@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 40" width="280" height="40">
+  <!-- Icon square: yellow background + navy bolt, matching the marketing header composition -->
+  <rect width="40" height="40" fill="#FFD60A"/>
+  <path d="M23 5L11 22h7.5l-2 12L30 17h-7.5z" fill="#0F1B4C" stroke-linejoin="round"/>
+  <!-- Wordmark: IBM Plex Mono, uppercase, white so it reads on the dark navy footer -->
+  <text x="54" y="27"
+        font-family="'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+        font-weight="600"
+        font-size="16"
+        letter-spacing="0.05em"
+        fill="#FFFFFF">LIGHTNINGHIRE</text>
+</svg>
